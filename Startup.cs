@@ -17,6 +17,8 @@ using System.Reflection;
 using System.IO;
 using BookStore_API.Contracts;
 using BookStore_API.Services;
+using AutoMapper;
+using BookStore_API.Mappings;
 
 namespace BookStore_API
 {
@@ -43,8 +45,10 @@ namespace BookStore_API
                 o.AddPolicy("CorsPolicy",
                     builder => builder.AllowAnyOrigin()
                     .AllowAnyMethod()
-                    .AllowAnyMethod());
+                    .AllowAnyHeader());
             });
+
+            services.AddAutoMapper(typeof(Maps));
 
             //Servicio para documentacion de la API
             services.AddSwaggerGen(c=>
