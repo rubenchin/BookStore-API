@@ -8,7 +8,7 @@ namespace BookStore_API.Data
     public partial  class Author
     {
         public int id { get; set; }
-        public string FirtsName { get; set; }
+        public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Bio { get; set; }
         public virtual IList<Book> Books { get; set; }
